@@ -7,7 +7,7 @@ export function NetworkIllustration() {
   return (
     <svg viewBox="0 0 400 420" className="h-full w-full text-primary" aria-hidden>
       {edges.map(([a, b], i) => (
-        <line key={i} x1={nodes[a][0]} y1={nodes[a][1]} x2={nodes[b][0]} y2={nodes[b][1]}
+        <line key={i} x1={nodes[a]![0]} y1={nodes[a]![1]} x2={nodes[b]![0]} y2={nodes[b]![1]}
           stroke="currentColor" strokeOpacity="0.35" strokeWidth="1" strokeDasharray="4 6"
           style={{ animation: `dash-flow ${3 + (i % 4)}s linear infinite` }} />
       ))}

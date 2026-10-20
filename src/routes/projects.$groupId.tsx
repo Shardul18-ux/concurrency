@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { PageShell } from "@/components/site/PageShell";
 import { getProject } from "@/data/projects";
+import { projectIcons } from "@/components/site/project-icons";
 
 // Each group's content is isolated. To integrate a standalone HTML project,
 // place it in public/projects/<group-id>/index.html (with its own CSS/JS/images)
@@ -29,7 +30,7 @@ export const Route = createFileRoute("/projects/$groupId")({
 function ProjectPage() {
   const { project } = Route.useLoaderData();
   const awaiting = project.status === "awaiting";
-  const Icon = project.icon;
+  const Icon = projectIcons[project.id];
   return (
     <PageShell>
       <section className="mx-auto max-w-5xl px-6 py-16 md:py-24">

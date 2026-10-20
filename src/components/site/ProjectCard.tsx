@@ -1,9 +1,10 @@
 import { Link } from "@tanstack/react-router";
 import type { Project } from "@/data/projects";
+import { projectIcons } from "./project-icons";
 
 export function ProjectCard({ project }: { project: Project }) {
   const awaiting = project.status === "awaiting";
-  const Icon = project.icon;
+  const Icon = projectIcons[project.id];
   return (
     <Link
       to="/projects/$groupId"
